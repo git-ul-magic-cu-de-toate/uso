@@ -1,0 +1,378 @@
+Examen grilă - 1CA - 22 ianuarie 2024
+
+Question 1
+Ce comandă efectuează operațiile 'fetch' și 'merge' pe branchul curent?
+Select one:
+a. git push
+b. git fetch
+c. git commit
+d. git pull
+
+Question 2
+Se face o copie de backup a MBR-ului unui hard disk în fișierul mbr.out. Ce comandă este indicată pentru a vizualiza conținutul fișierului?
+Select one:
+a. hexdump
+b. cat
+c. objdump
+d. grep
+
+Question 3
+Care dintre următoarele comenzi afișează un singur caracter ghilimele? În paranteză sunt precizate caracterele de după comanda echo, pentru claritate. (alegeți 2 variante)
+Select one or more:
+a. echo \" (backslash ghilimele)
+b. echo '"' (apostrof ghilimele apostrof)
+c. echo """ (ghilimele ghilimele ghilimele)
+d. echo "'" (ghilimele apostrof ghilimele)
+e. echo $" (dolar ghilimele)
+
+Question 4
+Care dintre următoarele NU se asociază tripletului (procese, rețea, shell scripting)?
+Select one:
+a. (init, ifconfig, #!)
+b. (daemon, switch, for)
+c. (ps, umask, redirectare)
+d. (kill, TCP, grep)
+
+Question 5
+Care dintre următoarele NU se asociază tripletului (rețea, sistem de fișiere, dezvoltare de programe)?
+Select one:
+a. (interfață, NTFS, editor)
+b. (IP, /, Makefile)
+c. (switch, link, BIOS)
+d. (MAC, mount, gcc)
+
+Question 6
+Care dintre următoarele reprezintă o adresă IP din rețeaua 1.2.3.0/24 ce poată fie asociată unei stații? (alegeți 2 variante)
+Select one or more:
+a. 1.2.3.1/24
+b. 1.2.3.255/24
+c. 1.2.3.510/24
+d. 1.2.3.42/24
+e. 1.2.3.0/24
+
+Question 7
+Selectați șirurile care fac match pe expresia regulată a+bab*c (alegeți 3 variante)
+Select one or more:
+a. abac
+b. ababc
+c. aabaabc
+d. aabbaabbc
+e. babc
+f. aaaababbbbc
+g. bac
+
+Question 8
+Care este cea mai bună descriere a nucleului (kernel)?
+Select one:
+a. interfața dintre procesor și periferice
+b. interfața dintre utilizator și hardware
+c. interfața dintre hardware și programe
+d. interfața dintre utilizator și calculator
+
+Question 9
+Care este ordinea corectă a secvenței de boot?
+Select one:
+a. power on -> bootloader -> sistem de operare
+b. power on -> bootloader -> firmware de boot -> sistem de operare
+c. power on -> firmware de boot -> sistem de operare
+d. power on -> firmware de boot -> bootloader -> sistem de operare
+
+Question 10
+Care dintre următoarele sunt funcționalități specifice shellului? (alegeți 2 variante)
+Select one or more:
+a. automated indentation
+b. implicit rules
+c. command completion
+d. reverse history search
+e. syntax highlighting
+
+Question 11
+Care este construcția shell care reține valoarea de retur a ultimei comenzi rulate?
+Select one:
+a. $#
+b. $?
+c. $$
+d. $*
+
+Question 12
+Ce rol are comanda find?
+Select one:
+a. localizează conexiunile de rețea realizate de pe sistemul local
+b. găsește un cuvânt într-o ierarhie
+c. parcurge ierarhii de fișiere și directoare
+d. găsește un cuvânt într-un fișier
+
+Question 13
+În ce director din ierarhia sistemului de fișiere Unix/Linux se găsesc, în general, fișierele de configurare?
+Select one:
+a. /bin
+b. /etc
+c. /var
+d. /boot
+
+Question 14
+Care dintre următoarele informații nu este furnizată prin DHCP?
+Select one:
+a. adresa gateway-lui
+b. adresa IP
+c. adresa MAC
+d. adresa serverului DNS
+
+Question 15
+Care dintre următoarele NU sunt referite prin intrări în /dev?
+Select one:
+a. interfața de rețea
+b. hard disk-ul
+c. stick-ul USB
+d. portul serial
+
+Question 16
+Ce fel de fișiere pot fi supuse operației de dezasamblare?
+Select one:
+a. fișiere modul obiect
+b. fișiere în limbaj de asamblare
+c. fișiere sursă C
+d. fișiere preprocesate
+
+Question 17
+Care este echivalentul numeric al permisiunilor rw-r---w-?
+Select one:
+a. 642
+b. 745
+c. 650
+d. 753
+
+Question 18
+Un utilizator creează un fișier folosind comanda:
+
+echo > test.txt
+
+Ce permisiune NU va fi prezentă în cadrul permisiunilor fișierului indiferent de valoarea umask?
+Select one:
+a. ștergere
+b. execuție
+c. scriere
+d. citire
+
+Question 19
+Care dintre următoarele comenzi sunt privilegiate (adică pot fi rulate cu efect DOAR de utilizatorul privilegiat)? (alegeți 2 variante)
+Select one or more:
+a. passwd
+b. df -h
+c. reboot
+d. uname -a
+e. cat /etc/shadow
+
+Question 20
+Ce au în comun distribuțiile Debian și Ubuntu? (alegeți 2 variante)
+Select one or more:
+a. utilizatorul root are UID-ul 42 în cazul ambelor distribuții
+b. același format de pachete
+c. folosesc nucleul Linux
+d. același logo
+e. au partiții cu același sistem de fișiere
+
+Question 21
+Care dintre următoarele sunt distribuții Linux? (Alegeți 3 variante)
+Select one or more:
+a. Windows Vista
+b. Fedora
+c. MacOS
+d. ManeLinux
+e. Armlinux
+f. Ubuntu
+g. Debian
+
+Question 22
+Ce nucleu/kernel se găsește la baza Android?
+Select one:
+a. Darwin
+b. Linux
+c. ntoskrnl.exe
+d. NetBSD
+
+Question 23
+Care este componenta software care asigură integritatea sistemului și gestiunea hardware-ului?
+Select one:
+a. biblioteca standard C
+b. procesul init
+c. compilatorul
+d. nucleul (kernelul)
+
+Question 24
+Care dintre următoarele sunt sisteme de operare pentru telefoane mobile inteligente (smartphones)? (alegeți 2 variante)
+Select one or more:
+a. macOS
+b. Android
+c. iOS
+d. Windows 10
+e. Fedora
+
+Question 25
+Ce utilitar pentru gestiunea pachetelor folosește distribuția Ubuntu?
+Select one:
+a. apt
+b. yum
+c. portage
+d. pacman
+
+Question 26
+Care dintre următoarele fișiere sunt fișiere binare (non-ASCII)? (alegeți 2 variante)
+Select one or more:
+a. fișiere create din redirectarea comenzii ps
+b. arhive
+c. fișiere cod sursă
+d. fișiere executabile
+e. scripturi shell
+
+Question 27
+Care dintre următoarele sunt sisteme de operare pentru PC-uri? (alegeți 3 variante)
+Select one or more:
+a. iOS
+b. Raspberry Pi
+c. Windows
+d. Arduino
+e. Linux
+f. macOS
+g. Android
+
+Question 28
+La ce se referă standardul ASCII?
+Select one:
+a. la servicii de rețea
+b. la codificare datelor
+c. la redirectarea output-ului unei comenzi
+d. la utilizatori privilegiati
+
+Question 29
+Care dintre următoarele utilitare sunt legate de gestiunea pachetelor într-o distribuție Debian GNU/Linux? (alegeți 2 variante)
+Select one or more:
+a. pwgen
+b. sqlite3
+c. gdb
+d. dpkg
+e. apt
+
+Question 30
+Comanda id este pentru un utilizator ceea ce este comanda ... pentru un proces.
+Select one:
+a. pidof
+b. last
+c. kill
+d. stat
+
+Question 31
+Ce tip de cale este folosită în următoarea comandă? cd ../../uso/lab-01/
+Select one:
+a. nicio variantă
+b. absolută
+c. partială
+d. relativă
+
+Question 32
+Ce reprezintă / (slash) în Linux? (alegeți 2 variante)
+Select one or more:
+a. primul proces din Linux
+b. caracter de escaping
+c. rădăcina sistemului de fișiere
+d. separator de cale
+e. bootloader-ul sistemului
+
+Question 33
+La ce se referă definiția: "O instanță a unui program, o entitate activă în cadrul sistemului de operare"?
+Select one:
+a. proces
+b. mașină virtuală
+c. interfață de rețea
+d. fișier
+
+Question 34
+Care este cel mai puternic mod în care putem opri un proces? (hard kill)
+Select one:
+a. Ctrl+c
+b. kill -9
+c. kill -15
+d. Ctrl+z
+
+Question 35
+Care este PID-ul procesului init?
+Select one:
+a. 42
+b. 1000
+c. 0
+d. 1
+
+Question 36
+Care este forma în octal a permisiunilor rw- r-- -w-?
+Select one:
+a. 234
+b. 435
+c. 642
+d. 571
+
+Question 37
+Care este forma în binar a permisiunilor rw- -w- r--?
+Select one:
+a. 110 001 100
+b. 110 100 001
+c. 110 010 100
+d. 110 100 010
+
+Question 38
+Care dintre următoarele reprezintă avantaje ale programării în C?
+Select one:
+a. limbaj relativ ușor de învățat
+b. limbaj foarte expresiv
+c. dezvoltarea unei aplicații durează puțin timp
+d. limbaj aproape de hardware și de sistemul de operare, ceea ce îl face eficient și rapid
+
+Question 39
+Care dintre următoarele sunt arhitecturi de procesor? (alegeți 2 variante)
+Select one or more:
+a. SSL
+b. ARM
+c. x86
+d. DHCP
+e. DLL
+
+Question 40
+Care dintre următoarele comenzi au legătură cu permisiunile sistemului de fișiere? (alegeți 2 variante)
+Select one or more:
+a. umask
+b. top
+c. strace
+d. lsmod
+e. file
+f. chmod
+
+Question 41
+Care dintre următoarele reprezintă un conținut probabil al variabilei de mediu PATH?
+Select one:
+a. 1000
+b. student,staff;sonya,fighters
+c. /bin:/usr/bin:/sbin
+d. daemon:*:1:1:System Services:/var/root:/usr/bin/false
+
+Question 42
+La ce este folosit /dev/null?
+Select one:
+a. pentru a genera șiruri "null"
+b. pentru a genera zero-uri
+c. pentru a elimina outputul unei comenzi
+d. pentru a genera numere pseudoaleatoare
+
+Question 43
+Cum se poate afișa valoarea unei variabile în bash?
+Select one:
+a. echo var
+b. echo "var"
+c. echo $var
+d. var
+
+Question 44
+Ce este wget?
+Select one:
+a. un client SSH
+b. un client DNS
+c. un client de e-mail
+d. un client web

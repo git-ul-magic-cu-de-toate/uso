@@ -1,0 +1,3 @@
+openssl enc -aes-192-cbc -in fisier_intrare.txt -out fisier_criptat.enc -pass file:cheie.txt
+
+sau -pass pass:parola_cunoscuta

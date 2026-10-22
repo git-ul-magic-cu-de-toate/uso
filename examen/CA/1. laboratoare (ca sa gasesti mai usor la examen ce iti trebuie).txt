@@ -1,0 +1,19 @@
+2. comenzi basic cu fisiere/directoare
+
+3. redirectari, arhive, find, locate, var PATH
+
+4. aplicatii (instalare, update, upgrade, stergere), PROCESE
+
+5. tot ce tine de internet, ip (configureaza, sterge ip), rute, gateway, DNS, TCP, UDP, ssh, wget, curl
+
+6. ls+cautare anumite fisiere (globbing), find+pattern, campuri ps, argumente grep, alias-uri, $? = iesirea ultimei comenzi, FISIERE SPECIALE (/dev/null, /dev/zero, /dev/urandom), => dd !! + xxd (dupa cat), history
+
+7. comenzi parsing text, reg ex vs globbing, caractere speciale, tr, sed, sort, awk, cut, argumente in linia de comanda $, if, for, while read, pwgen
+
+8. git (explica pas cu pas cum sa faci cam orice)
+
+9. tee = scrie la STDOUT, dar si append in fisier, permisiuni si utilizatori, procese again
+
+10. base64 (-d), hashing (md5sum, sha256sum), fcrackzip, john the ripper (vezi ss-uri lab 10)
+
+11. hamachi (statii local, remote), conectare retea, tunel ssh, tmux (terminale "virtuale"), configurare shell, var PS1, montare sisteme de fisiere, servicii, systemctl (stare, start, oprire), ntp (sincronizare ceas), enable/disable pornire servicii la start-up

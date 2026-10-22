@@ -1,0 +1,85 @@
+ln -s /cale denumire = legatura simbolica
+
+cp file .  = copiaza fisierul in calea curenta
+cp -r folder . = copiaza folder in cale curenta
+
+cmp file1 file2 = compara fisiere
+diff -r folder1 folder = compara folderele
+
+mv file1 file = muta fisierul
+mv folder1 folder2 = muta folder recursiv
+
+rm -rf = stergere fortat recursiva a unui director
+rm Folder/* = stergere toate fisierele din director
+
+find /cale -name nume = afisarea tuturor fisierelor cu numele nume din /cale
+find /cale -size +500k = mai mari ca 500KB
+
+whereis ls = localizeaza calea catre executabil si manual
+which ls = doar calea catre executabil
+
+zip = arhivare si compresie
+tar = arhivare 
+gzip = compresie
+
+tar c.. = create archive
+tar v.. = verbose, shows what is happening
+tar f filename = pentru numele arhivei "filename"
+
+tar cvf tarfile.tar director_intrare/ = creeaza tar fisier
+tar tf tarfile.tar = listeaza continut tarfile.tar
+tar xf /cale_catre_tarfile.tar = dezarhiveaza tar-ul in directorul in care te afli acum
+
+tar z = gzip
+tar j = bzip2
+
+tar czf tarfile.tar director_intrare/ = gzip
+tar cjf tarfile.tar director_intrare/ = bzip2
+
+stdin = 0 
+stdout = 1
+stderr = 2
+
+./program < fisier_intrare
+./program > fisier_iesire
+./program 2 > fisier_erori
+./program 2 > &1 = erorile la stdouts
+./ program > fisier_iesire_si_erori 2 > &1
+
+ls > file.txt = va redirecta in file.txt
+ls >> file.txt = appends
+
+cp listare 2 > ERRORS.TXT = va redirecta erorile in ERRORS.TXT
+
+ls > fisier.out 2 > &1  = si iesirea de eroare si iesirea standard
+
+
+sudo apt install inkscape = instalarea pachetului
+apt show inkscape = instalat sau nu?
+sudo apt remove inkscape = sterge pachetul
+sudo apt update = actualizeaza info locale despre pachete
+sudo apt upgrade = actualizeaza pachetele de pe sistem
+sudo apt -d remove inkscape = descarca pachetul, nu il instaleaza
+apt source inkscape = descarca sursele pachetului 
+
+dpkg -l | grep '^ii' = afiseaza pachetele instalate local
+dpgk -l *book* = cauta pachetele instalate local dupa expresia book
+dpkg -S /usr/bin/bash = identifica pachetul care contine fisierul /usr/bin/bash
+dpkg -L inkscape = afiseaza continutul pachetului inkscape, instalat local
+
+
+
+less /etc/passwd | cut -d ':' -f1 =afiseaza toti utilizatorii din sistem
+
+sudo usermod -d /newhome/username username = change user home
+
+sudo passwd user = schimbi parola utilizatorului
+
+cat /etc/passwd | grep "$(cat /bin/shells)" | cut -d ":" -f 1,7 = toti utilizatorii care au shell
+
+tr -s " " = squishes spatiile
+
+cat fisier | tr “[a-z]” “[A-Z]” = inlocuieste a-z cu A-Z
+
+find /etc -maxdepth 1 -type f -ls | tr -s " " | cut -d " "  -f12 = list all regular files din /etc
+

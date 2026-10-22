@@ -1,0 +1,130 @@
+TEMA2 USO  
+436  sudo uso update
+  437  sudo uso start 2
+  438  ls
+  439  ip link show
+  440  ip address show
+  441  ip address show ens33 >> ~/tema2/task1/conexiune_internet.txt
+  442  sudo uso check 1
+  443  man pin
+  444  ping -c 8 -i 4 8.8.8.8 >> ~/tema2/task1/conexiune_server.txt
+  445  ping -c 5 -i 2 google.com >> ~/tema2/task1/conexiune_web.txt
+  446  sudo uso check 1
+
+
+TASK2
+  487  git clone https://github.com/RaresCon/USO-TEMA-2.git
+  488  cd USO-TEMA-2/
+  489  tar xvf ~/tema2/task2/USO-TEMA-2.tar.gz
+  490  tar xvf USO-TEMA-2.tar.gz
+  491  rm USO-TEMA-2.tar.gz
+  492  sudo uso check 2
+  
+
+TASK3
+493  cd ~
+  5XX  grep -i -E '\bcon|to\b' long_story_short.txt >> task_3_1.txt
+  5XX  sort task3_1.txt > tmp && head -n 10 tmp > task3_2.txt ; tail -n 10 tmp >> task3_2.txt
+  5XX  awk 'tolower() ~ /^m|^e/' task3_2.txt > task3_3.txt
+  5XX  echo "grep -i -E '\bcon|to\b' long_story_short.txt >> task_3_1.txt" >> output.txt
+  5XX  echo "sort task3_1.txt > tmp && head -n 10 tmp > task3_2.txt ; tail -n 10 tmp >> task3_2.txt" >> output.txt
+  5XX  echo "awk 'tolower() ~ /^m|^e/' task3_2.txt > task3_3.txt" >> output.txt
+  577  cat output.txt
+  578  sudo uso check
+  
+TASK4
+579  cd ~
+  580  git config --global user.name "Rares Sarmasag"
+  581  git config --global user.email "rsarmasag.ubisoft@aol.com"
+  582  type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+  583  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+  584  type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+  585  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null && sudo apt update && sudo apt install gh -y
+  586  gh auth login
+  619  gh repo clone rares9301/unikraft
+  620  cd unikraft/
+  621  git config --local user.name "Rares Sarmasag"
+  622  git config --local user.email "rsarmasag.ubisoft@aol.com"
+  623  git config user.name "Rares Sarmasag"
+  624  git config user.email "rsarmasag.ubisoft@aol.com"
+  625  git branch rares9301
+  626  git checkout rares9301
+  627  sudo uso check 4
+  628  echo "dau speedrun la tema" > tema_uso_e_prea_simpla
+  629  git commit --signoff -m "vim>vsc unpopular opionion?"
+  630  git add .
+  631  git commit --signoff -m "vim>vsc unpopular opionion?"
+  632  sudo uso check
+  
+
+
+TASK5
+  633  cd ~
+  634  cd tema2/task5/
+  63%  sudo apt update && sudo apt install killall
+  636  chmod +x ./task5
+  637  ./task5
+  638  sudo ./task5
+  639  sudo killall task5
+  641  echo "sudo killall task5" >> sol.txt
+  642  sudo uso check
+  
+
+TASK6
+  643  cd ~/.ssh/
+  644  ls
+  645  touch config ; chmod 600 config
+  646  vim config
+  647  sudo vim config
+  648  ssh fep
+  649  ssh rares.sarmasag@fep.grid.pub.ro
+  650  ls
+  651  sudo uso check
+  652  ssh fep
+  653  ssh fep
+  654  ssh-keygen -t rsa -b 4096 -C "rares.sarmasag@stud.acs.upb.ro"
+  655  ssh-copy-id rares.sarmasag@fep.grid.pub.ro
+  656  ssh fep
+  657  cd tema2/task6/
+  658  ls
+  659  cd ..
+  660  ls
+  661  cd task6
+  662  ls
+  663  echo "rares.sarmasag" >> user.txt
+  664  sudo uso check
+
+
+TASK7
+  665  cd ..
+  666  touch task7.sh
+  667  vim task7.sh
+  
+INSIDE task7.sh: 
+	#!/bin/bash
+
+	token=$(curl -s http://141.85.232.81:5000/uso/part1/$USERNAME)
+
+	curl -X POST -H "Content-Type:application/json" -d '{"token":"'"$token"'"}' http://141.85.232.81:5000/uso/part2
+  
+677  sudo uso check
+
+
+TASK8 
+
+  678  mkdir tema2/task8
+  679  cd tema2/task8
+  680  git clone https://github.com/andreistan26/server-data.git
+  681  cp server-data/connection-logs.txt ./
+  682  ls
+  683  sudo uso check 8
+  684  cat connection-logs.txt
+
+  Continut scripturi:
+1.inactive_connections.sh
+
+touch /home/student/tema2/task8/inactive_connections_out.txt ; awk '/inactive/ {print $1, $3; count++} END {print "Total:", count}' /home/student/tema2/task8/connection-logs.txt > /home/student/tema2/task8/inactive_connections_out.txt
+
+2.longest_connections.sh
+
+awk '$2 == "active" {print $1, $3}' /home/student/tema2/task8/connection-logs.txt | sort -nrk2 | head -n 8 | awk '{print NR".", $0}' > /home/student/tema2/task8/longest_connections_out.txt

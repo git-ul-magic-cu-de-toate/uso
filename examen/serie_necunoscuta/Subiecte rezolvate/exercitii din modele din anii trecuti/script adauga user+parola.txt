@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while IFS= read -r line; do
+   user=$(echo $line | cut -d, -f2)
+   sudo useradd -d /home/"$user" -s /bin/bash "$user"
+   pass=$(echo $(shuf -i 0-9 -n 10 | tr -d '\n'))
+   echo "$user:$pass" | (sudo ??) chpasswd
+done < users.csv

@@ -1,0 +1,104 @@
+USERI:
+
+# Adauga user + director home
+useradd -m -d /home/<nume> <nume_user>
+fara director: iseradd <nume>
+
+# give sudo : usermod -aG sudo <nume>
+
+# Create a new group
+sudo groupadd group1
+
+# Add users to the group
+sudo usermod -a -G group1 user1
+
+# Change the group ownership of the directory
+sudo chgrp -R group1 /path/to/your/directory (ptr grup)
+sudo chown -R so:so ~/uso_final/var134/SO (ptr user)
+
+#Schimbarea directorului home al unui user
+sudo userdmod -d /home/student/ana -m ana ( il schimba in home/student/ana)
+
+sudo fara parola -> sudo visudo
+in folder adaugi student ALL=(ALL) NOPASSWD:ALL
+
+touch hi_ana
+sudo chown rareshanu hi_ana ( schimb userul fisierului)
+sudo chgrp ana hi_ana 
+sudo chmod 660 hi_ana
+
+# Set permissions for directories
+find /path/to/your/directory -type d -exec chmod 770 {} \;
+
+# Set permissions for files
+find /path/to/your/directory -type f -exec chmod 660 {} \;
+
+770- r w execute
+660- r w 
+0 ( de la final )- asigura ca restul de useri din grup nu au acest permisiuni
+
+afisati doar ruta implicita a sistemului si interfata de retea atasata acesteia :
+ ip route | grep default
+
+Hop urile prin care trece un link : tracerout <link>
+
+Mut scriptul ca sa fie comanda: sudo mv checknet.sh /usr/local/bin/checknet
+
+PROCESE - TOP/HTOP ( -o %MEM ordonate descresc dupa memorie )
+
+# Use dig to get the IP address
+IP=$(dig +short $URL)
+
+SHOW ALL FILES FROM A DIRECTORY INCLUDING THEIR RIGHTS:
+ls -ld /usr/bin/*
+(* ptr toate fisierele care incep PATH-ul cu /usr/bin/ )
+
+NUMELE DISTRIBUTIEI PLUS VERSIUNEA:
+cat /etc/os-release | head -2
+
+find /var/log/ -name "*.gz" -print0 | xargs -0 ls -lh
+
+find /var/log/ -name "*.gz" -print0: Acesta caută toate fișierele cu extensia .gz în directorul /var/log/ și subdirectoarele sale. Opțiunea -print0 afișează rezultatele cu un caracter null la sfârșit, ceea ce permite manipularea corectă a numelor de fișiere care conțin spații, tab-uri sau linii noi. Opțiunea -0 ( de dupa grep ) le spune lui xargs să se aștepte la intrări separate de caracterul null, care este compatibil cu -print0 de la find
+
+for fisier in *.txt; do mv "$fisier" "${fisier%.*}_uso.${fisier##*.}"; done -> asta adauga _uso inainte de extensia fisierului pentru toate fisierele din folderul curent
+
+fallocate -l 10M file -> creeaza file de 10MB
+
+mkfs.ext3 file -> format file to ext3
+
+
+pgrep -P 1 -> afiseaza pid ul proceselor care il au pe init parinte
+ps -o pid,ppid,cmd -p $(pgrep -P 1) -> afiseaza toate detaliile despre procesele care il au pe init parinte
+
+ps -u root -o pid,cmd,%mem -> afiseaza pid,cmd si procentu de memorie ptr root
+ps -u root --no-headers -o pid,cmd,%mem | sort -rk3 -> acelasi lucru, ordonate dupa col 3(mem)
+ps -u root -o pid,ppid,%mem | sort -rk3 | head -4 | tail -3 (primele 3 procese, fara primu rand belit cu text)
+ps -f -u -> toate procesele pornite de student
+ps -u student --sort=-%cpu -> sorteaza descrescator toate procesele pornite de student dupa cpu ( daca vreau crescator fol --sort=%cpu)
+
+
+utilitar & -> porneste utilitar in fundal
+grep -r -l '#ifndef' /usr/include -> toate fisierele din ierarhia /usr/include care contin directiva #ifndef
+sa inceapa RANDUL cu o expresia punem (^) : ^#ifndef
+sa se termine cu o expresie punem ($) : #ifndef$
+
+ls -lah 
+sort- sorteaza fisiere
+
+sudo systemctl disable snapd.service ( cand se reseteaza sistemul serviciul de snap nu mai porneste automat la startup; enable e also un flag)
+
+sort file.txt | uniq | wc -l ( cate cuvinte cu nume unic exista)
+
+move on a branch : git checkout <nume>
+
+git init - creeaza un repository local
+git commit -m "<mesaj>" - creeaza un commit cu un mesaj
+#SUPER COMANDA : sed -i 's/42/76/g' test.c ( inloc fiecare 42 cu 76 in test.c)
+
+md5sum <file> -> genereaza suma md5 a unui fisier ( > <file2> ptr a redirecta)
+wget link -> descarci de la linku asta
+base64 -d <file> -> decodeaza un fisier
+
+scp user@172.20.128.2:/etc/group /home/student/remote_group (copiez /etc/group de la adresa IP si le pun in remote_group cu cale abs)
+
+who -> utilizatorii care au deschis un terminal in host

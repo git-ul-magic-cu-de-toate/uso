@@ -1,0 +1,1 @@
+a=$(ps -ef | cut -f1 -d' ' | sort | uniq | wc -l); b=$(cat /etc/passwd | wc -l); c=$((b-a)); echo $c

@@ -1,0 +1,112 @@
+https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php
+
+
+SCRIPT PROCESE: 
+
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+  echo "Please provide a PID"
+  exit 1
+fi
+
+PID=$1
+
+echo "Parent process:"
+ps -o pid --ppid $PID
+
+echo "CPU usage:"
+ps -p $PID -o %cpu
+
+echo "Memory usage:"
+ps -p $PID -o %mem
+
+echo "Command used to start process:"
+ps -p $PID -o args
+
+echo "Process hierarchy:"
+pstree -p $PID
+
+
+// Primeste un PID, TRB NEAP FOLOSIT Z, SI AFISEAZA IN ORDINE: PROCESUL PARINTE, PROCENTUL DE CPU USAGE,
+PROCENTUL DE MEM USAGE, COMANDA FOLOSITA PENTRU PORNIRE SI TOATA IERARHIA DE PROCESE PORNITE DE ACEST PROCES//
+// In loc de $PID care e ca o variabila, teoretic aveam un nr care specifica un anumit proces ( ex: 1244)//
+
+
+
+AFISARE ADRESA IP DE LA UN URL PRIMIT CA ARGUMENT
+
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+  echo "Please provide a URL as an argument"
+  exit 1
+fi
+
+URL=$1
+
+# Use dig to get the IP address
+IP=$(dig +short $URL)
+
+echo "The IP address of $URL is $IP"
+
+
+
+CEVA CU PERMISIUNI, MANIPULARI DE STRINGURI
+
+#!/bin/bash
+
+PATH=$1
+
+if [ $PATH -n ]; then
+        for file in $(ls $PATH); do
+                echo file
+                file_perms=$(ls -la file | awk  '{print $1}')
+                file_name=$(ls -la file | awk '{print $9}')
+                echo *perms = $file_perms
+                echo *name $file_name
+                if[ $file_perms != "rwxr-xr-x" ]; then
+                        echo "$file_perms $file_name"
+                fi
+        done
+fi
+
+#OPEN A PROCESS 30 TIMES
+
+#!/bin/bash
+
+for i in {1..30}
+do
+         sleep 100 &
+done
+
+
+
+#AFISEAZA PROCESUL CARE OCUPA CEA MAI MULTA MEM CPU, LA INTERVAL DE O SECUNDA
+
+#!/bin/bash
+while true; do
+    clear
+    ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -1
+    sleep 1 
+done
+
+#AFISEAZA PROCESUL CARE OCUPA CEA MAI MULTA MEM CPU, LA INTERVAL DE O SECUNDA ( daca primesc ca argument n, ptr a afisa n procese)
+    
+#!/bin/bash
+while true; do
+    clear
+    ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n $(($1+1))
+    sleep 1
+done
+
+#AFISEAZA UTILIZATORUL SI GRUPUL CARE DETIN FISIERUL/DIRECTORUL PRIMIT CA PARAMETRU
+
+#!/bin/bash
+if [ -e "$1" ]; then
+    echo "Owner: $(ls -l $1 | awk '{print $3}')"
+    echo "Group: $(ls -l $1 | awk '{print $4}')"
+    echo "Size in bytes: $(ls -l $1 | awk '{print $5}')"
+fi

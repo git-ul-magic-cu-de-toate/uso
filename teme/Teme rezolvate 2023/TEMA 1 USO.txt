@@ -1,0 +1,238 @@
+TEMA 1 USO
+sudo uso update ; sudo uso start 1
+
+
+TASK 1 _ foarte amestecat -> se construiesc folderele. Fisierele/folderele care contin caractere speciale sau spatii vor si facute cu "nume foler" sau cu escapare "\" Exemplu: "folder 'nou" => folder\ \'nou 
+   21  mkdir Facultatea de Automatica si Calculatoare
+   22  ls
+   23  rmdir Facultatea de Automatica si Calculatoare
+   24  mkdir "Facultatea de Automatica si Calculatoare"
+   25  cd Facultatea\ de\ Automatica\ si\ Calculatoare/
+   26  ls
+   27  mkdir "Utilizarea sistemelor de operare"
+   28  cd Utilizarea\ sistemelor\ de\ operare/
+   29  touch "Sisteme de fisiere"
+   30  touch "Instalarea si utilizarea aplicatiilor"
+   31  touch "Investigare > securitatea sistemului"
+   32  cd ..
+   33  mkdir "Programarea calculatoarelor"
+   34  mkdir "Instructiunile limbajului C"
+   35  mkdir "Alocarea dinamica a memoriei.c"
+   36  cd Alocarea\ dinamica\ a\ memoriei.c/
+   37  touch Vectori.c Matrice.c
+   38  cd ..
+   39  mkdir "Parametrii liniei de comanda`"
+   40  ls
+   41  ls -a
+   42  ls -la
+   43  rm -r ~/Facultatea\ de\ Automatica\ si\ Calculatoare/
+   44  ls
+   45  cd ..
+   46  ls
+   47  mkdir "Facultatea de Automatica si Calculatoare"
+   48  mkdir "Anul 1" "Anul 2" "Anul 3" "Anul 4"
+   49  ls
+   50  rmdir "Anul 1" "Anul 2" "Anul 3" "Anul 4"
+   51  cd Facultatea\ de\ Automatica\ si\ Calculatoare/
+   52  mkdir "Anul 1" "Anul 2" "Anul 3" "Anul 4"
+   53  cd Anul\
+   54  cd Anul\ 1
+   55  mkdir "Utilizarea sistemelor de operare" "Programarea calculatoarelor" "Proiectare logica"
+   56  cd Utilizarea\ sistemelor\ de\ operare/
+   57  touch "Sisteme de fisiere" "Instalarea si utilizarea aplicatiilor" "Investigare > securitatea sistemului"
+   58  ls -la
+   59  cd ..
+   60  ls -la
+   61  cd Programarea\ calculatoarelor/
+   62  ls
+   63  mkdir "Instructiunile limbajului C" "Alocarea dinamica a memoriei.c" "Parametrii liniei de comanda`"
+   64  ls
+   65  mkdir "Instructiunile limbajului C" "Alocarea dinamica a memoriei.c" "Parametrii liniei de comanda`"
+   66  ls
+   67  mkdir "Instructiunile limbajului C"
+   68  mkdir "Alocarea dinamica a memoriei.c"
+   69  cd Alocarea\ dinamica\ a\ memoriei.c/
+   70  touch Vectori.c Matrice.c
+   71  ls
+   72  cd ..
+   73  mkdir "Parametrii liniei de comanda`"
+   74  mkdir Parametrii\ liniei\ de\ comanda`
+   75  mkdir Parametrii\ liniei\ comanda\`
+   76  ls
+   77  cd Parametrii\ liniei\ comanda\`/
+   78  touch "Preprocesorul" "Vectori.cpp" "Blocuri.c"
+   79  ls
+   80  cd ..
+   81  ls -la
+   82  cd ..
+   83  ls
+   84  cd Proiectare\ logica/
+   85  mkdir "Logica combinationala" "$Logica secventiala$"
+   86  ls
+   87  ls -la
+   88  mkdir \$Logica\ secventiala\$
+   89  ls
+   90  rm
+   91  rmdir " secventiala\$"/
+   92  ls
+   93  cd ..
+   94  cd Anul\ 2
+   95  ls
+   96  mkdir "Programare orientata pe obiecte"
+   97  cd Programare\ orientata\ pe\ obiecte/
+   98  touch \|\ Constructori\ |\ si\ referinte
+   99  touch \|\ Constructori\ \|\ si\ referinte
+  100  ls
+  101  rm rmdir \|\ Constructori\
+  102  rls
+  103  ls
+  104  cd ..
+  105  mkdir IOCLA
+  106  mkdir "Teoria sistemelor"
+  107  cd ..
+  108  cd ..
+  109  sudo uso check 1
+  110  ls
+  111  cd Facultatea\ de\ Automatica\ si\ Calculatoare/
+  112  ls
+  113  cd Anul\ 1
+  114  ls
+  115  cd Programarea\ calculatoarelor/
+  116  ls -la
+  117  cd Parametrii\ liniei\ comanda\`/
+  118  ls
+  119  ls -la
+  120  sudo uso check 1
+  121  ls -la
+  122  cd ..
+  123  rm -r Parametrii\ liniei\ comanda\`/
+  124  ls
+  125  mkdir Parametrii\ liniei\ de\ comanda\`
+  126  ls
+  127  uso check 1
+  128  sudo uso check 1
+  129  cd Parametrii\ liniei\ de\ comanda\`/
+  130  touch "Preprocesorul" "Vectori.cpp" "Blocuri.c"
+  131  sudo uso check 1
+  132  cd ..
+  133  cd ..\
+  134  cd ..
+  135  cd Anul\ 2
+  136  ls
+  137  cd Programare\ orientata\ pe\ obiecte/
+  138  ls =la
+  139  ls -la
+  140  mkdir Mostenire\\
+  141  ls
+  142  sudo uso check 1
+  143  cd ~
+  144  cd Facultatea\ de\ Automatica\ si\ Calculatoare/
+
+
+TASK2  - pretty basic
+
+145  cp Anul\ 1/Programarea\ calculatoarelor/ ~/Facultatea\ de\ Automatica\ si\ Calculatoare/Copie\ PC
+  146  cp -r Anul\ 1/Programarea\ calculatoarelor/ ~/Facultatea\ de\ Automatica\ si\ Calculatoare/Copie\ PC
+  147  ls
+  148  sudo uso check 2
+  149  cp Copie\ PC/Alocarea\ dinamica\ a\ memoriei.c/Vectori.c Copie\ PC/Instructiunile\ limbajului\ C/Arrays.c
+  150  sudo uso check 2
+  151  cp Copie\ PC/Alocarea\ dinamica\ a\ memoriei.c/Matrice.c Copie\ PC/Instructiunile\ limbajului\ C/
+  152  sudo uso check 2
+  153  rm -r Copie\ PC/Parametrii\ liniei\ de\ comanda\`/
+  154  sudo uso check 2
+  155  rm Copie\ PC/Alocarea\ dinamica\ a\ memoriei.c/Matrice.c
+  156  sudo uso check 2
+  157  touch Copie\ PC/Alocarea\ dinamica\ a\ memoriei.c/\|\ Segmentation\ Fault
+  158  sudo uso check 2
+  159  cd ~
+  160  mkdir .Teme\ USO
+  161  sudo uso check 3
+  162  cd .Teme\ USO/
+  163  ls
+
+
+TASK3 - 
+  164  touch .prima\ parte .a\ doua\ parte .a\ treia\ parte
+  165  sudo uso check 3
+  166  echo "Aceasta este partea 1 din tema curenta." > .prima\ parte
+  167  echo "Aceasta este partea 2 din tema curenta." > .a\ doua\ parte
+  168  echo "Aceasta este partea 3 din tema curenta." > .a\ treia\ parte
+  169  sudo uso check 3
+  170  cd ~
+  171  touch task_3.txt
+  172  cat .Teme\ USO/.prima\ parte > task_3.txt
+  173  cat .Teme\ USO/.a\ doua\ parte >> task_3.txt
+  174  cat .Teme\ USO/.a\ treia\ parte >> task_3.txt
+  175  sudo uso check 3
+
+
+TASK4 - 
+  187  ln -s .Teme\ USO/.prima\ parte partea1
+  188  ln -s .Teme\ USO/.a\ doua\ parte partea2
+  189  cat partea1 >> task_4.txt
+  190  cat partea2 >> task_4.txt
+  191  sudo uso check 4
+  
+
+TASK5 -
+  209  tree -a >> ierarhie1.txt
+  210  sudo uso check 5
+  218  sudo tree /boot -a >> ierarhie2.txt
+  219  sudo uso check 5
+  220  cat /etc/group >> ~/utilizatori_si_grupuri.txt
+  221  sudo uso check 5
+  222  cat nu_exista.txt >> eroare.txt
+  223  cat nu_exista.txt 2> eroare.txt
+  224  sudo uso check 5
+  230  cat ierarhie1.txt >> task_5.txt ; cat ierarhie2.txt >> task_5.txt ; cat utilizatori_si_grupuri.txt >> task_5.txt ; cat eroare.txt >> task_5.txt
+  231  sudo uso check 5
+
+
+TASK6 -
+  232  tar cvf archive1.tar Facultatea\ de\ Automatica\ si\ Calculatoare/
+  233  ls
+  235  sudo uso check 6
+  236  tar cvf archive2.tar Facultatea\ de\ Automatica\ si\ Calculatoare/
+  237  sudo uso check 6
+  238  tar rvf archive2.tar ierarhie1.txt ierarhie2.txt utilizatori_si_grupuri.txt eroare.txt task_5.txt
+  239  sudo uso check 6
+  240  tar czvf archive1.tar.gz Facultatea\ de\ Automatica\ si\ Calculatoare/
+  241  sudo uso check 6
+  242  sudo uso check 5
+  243  rm ierarhie1.txt
+  244  tree -a >> ierarhie1.txt
+  245  sudo uso check 5
+  246  rm task_5.txt
+  247  cat ierarhie1.txt >> task_5.txt ; cat ierarhie2.txt >> task_5.txt ; cat utilizatori_si_grupuri.txt >> task_5.txt ; cat eroare.txt >> task_5.txt
+  248  sudo uso check 5
+  249  sudo uso check 6
+
+TASK7 -
+ 
+
+  263  sudo find ~/Facultatea\ de\ Automatica\ si\ Calculatoare/ -iname "*.c" >> cautare.txt -type f
+  264  sudo uso check 7
+  272  command -v cat >> final.txt
+  273  command -v rm >> final.txt
+  274  command -v vim >> final.txt
+  275  sudo uso check 7
+  276  echo "$PS1"
+  321  export PS1='\[\033[00;31m\]\u\[\033[0;32m\]@\h\[\033[0;00m\]:\[\033[0;35m\]\w\[\033[00m\] $ '
+  322  sudo vim .bashrc
+  323  nano .bashrc
+  324  .bashrc
+  325  /.bashrc
+  326  ~/.bashrc
+  327  sudo ~/.bashrc
+  328  sudo uso check 7
+  
+  387  export TZ='date +%D'
+  388  $TZ
+  404  rm ierarhie1.txt
+  405  tree -a >> ierarhie1.txt
+  406  sudo uso check
+  407  rm task_5.txt
+  408  cat ierarhie1.txt >> task_5.txt ; cat ierarhie2.txt >> task_5.txt ; cat utilizatori_si_grupuri.txt >> task_5.txt ; cat eroare.txt >> task_5.txt
+  409  sudo uso check
+  432  sudo uso submit

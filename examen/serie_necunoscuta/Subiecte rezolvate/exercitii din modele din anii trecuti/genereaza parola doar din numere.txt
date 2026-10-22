@@ -1,0 +1,1 @@
+echo $(shuf -i 0-9 -n 10 | tr -d '\n')

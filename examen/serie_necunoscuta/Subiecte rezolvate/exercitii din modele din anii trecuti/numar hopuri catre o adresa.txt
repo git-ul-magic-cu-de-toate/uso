@@ -1,0 +1,1 @@
+traceroute -q 1 ocw.cs.pub.ro | tail -n 1 | awk '{print $1}'

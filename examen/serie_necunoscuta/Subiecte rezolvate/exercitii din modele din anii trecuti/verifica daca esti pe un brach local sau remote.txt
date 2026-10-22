@@ -1,0 +1,3 @@
+git branch -vv
+
+also: git remote show 

@@ -1,0 +1,3 @@
+!!! grep -r
+
+grep -r "#include <stdio.h>" /usr/include | cut -d: -f2

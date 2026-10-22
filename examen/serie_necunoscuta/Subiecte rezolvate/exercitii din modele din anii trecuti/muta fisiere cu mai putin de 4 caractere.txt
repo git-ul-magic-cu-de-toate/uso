@@ -1,0 +1,9 @@
+find directory -type f -exec sh -c 'for file; do filename=$(basename "${file%.*}"); if [ ${#filename} -lt 4 ]; then mv "$file" Saved/; fi; done' sh {} +
+Explicație:
+
+find directory -type f: Caută în directorul directory și în toate subdirectoarele sale fișiere (-type f).
+-exec sh -c '...' sh {} +: Pentru fiecare fișier găsit, execută comanda dată în interiorul unui shell.
+for file; do ... done: Parcurge fiecare fișier găsit.
+filename=$(basename "${file%.*}"): Extrage numele fișierului fără extensie.
+if [ ${#filename} -lt 4 ]: Verifică dacă numele fișierului are mai puțin de 4 caractere.
+mv "$file" Saved/: Mută fișierul în directorul Saved.

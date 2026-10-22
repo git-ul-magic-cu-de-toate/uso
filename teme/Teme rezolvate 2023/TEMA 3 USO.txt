@@ -1,0 +1,65 @@
+TEMA 3 USO - incomplet (n am mai avut chef de tema ca era 24 decembrie ) 
+
+TASK1
+  979  git clone https://github.com/openwall/john
+  980  cd john/src
+  981  sudo apt remove john
+  982  ./configure && make
+  983  sudo apt install gcc build-essential zlib1g-dev libssl-dev wget
+  984  ./configure && make
+  985  john --help
+  996  ln -s ~/john/run/zip2john zip2john
+ 1002  ./zip2john tema3-sec/arhiva1.zip > hashdump
+ 100%  john/run/john --format=zip --mask=?l?l?l?l?l?l hashdump
+ 
+
+TASK2 
+1003  cd tema3-sec/
+ 1004  cat wordlist_decoded.txt
+ 1005  md5sum wordlist_dec
+ 1006  sha256sum wordlist_dec
+
+student@uso:~/tema3-sec $ cat wordlist_decoded.txt
+001101100001101100011101010000100000011100000110000000100000111100010100000110110000010000001010
+001010100001010100000000000000010000000001010011010011100000010100001001000001000001110100100110
+010001000100001001011101010111100100011101000111010101110100001101010110010110000101011101001000
+000110010100001100000001000101000011001101011000010001010000101000110111001010110001011000001010
+010001000001101001011101000111110001110100011001000010100101110100010010000110000000101001001101
+
+ 
+TASK3 -check sh
+exemple
+ 1008  cat user1.txt
+ 1009  cat hashes.txt
+ 1010  md5sum user1.txt
+ 1011  md5sum user_corrupted_2.txt
+ 1012  cat user1.txt
+
+
+TASK4 - unbase.sh
+1013  cd tema3-task4/
+ 1014  cat 64unbased.txt
+ 1015  cat 64based.txt
+ 101%  vim unbase.sh 
+ 1016  exit
+ 1017  history
+
+unbase.sh 
+#!/bin/bash
+
+while IFS= read -r line
+do
+        echo "$line" | base64 --decode >> wordlist_decoded.txt
+        echo "" >> wordlist_dec
+done < "wordlist.txt"
+
+check.sh
+#!/bin/bash
+
+for i in {1..3}
+do
+»       md5sum user$i.txt | awk '{print $1 }' > filehash.txt
+        grep user$i.txt hashes.txt | awk '{print $1}' > knownhash.txt
+
+»       diff -q filehash.txt knownhash.txt > /dev/null || mv user$i.txt user_corrupted_$i.txt
+done

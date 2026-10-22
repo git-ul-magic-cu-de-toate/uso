@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Verificăm dacă există un singur argument
+if [ $# -ne 1 ]; then
+    echo "Utilizare: $0 <nume_fișier>"
+    exit 1
+fi
+
+filename=$1
+
+# Verificăm dacă fișierul există
+if [ ! -f "$filename" ]; then
+    echo "Fișierul '$filename' nu există!"
+    exit 1
+fi
+
+# Parcurgem fiecare linie din fișier
+while IFS=: read -r username password || [[ -n "$username" ]]; do
+    # Verificăm dacă utilizatorul există deja în sistem
+    if id "$username" &>/dev/null; then
+        # Actualizăm parola utilizatorului existent
+        echo "$username: Parola utilizatorului a fost actualizată."
+        echo "$username:$password" | sudo chpasswd
+    else
+        # Adăugăm utilizatorul și parola în sistem
+        sudo useradd -m -p $(openssl passwd -1 "$password") "$username"
+        echo "$username: Utilizatorul a fost adăugat cu succes."
+    fi
+done < "$filename"

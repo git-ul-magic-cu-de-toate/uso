@@ -1,0 +1,101 @@
+1.
+b) sudo su
+adduser himmel
+adduser singed
+usermod himmel -a -G sudo
+usermod singed -a -G sudo
+
+c) usermod himmel -d /home/student/Animations/American/
+
+2.
+a) lsb_release -d | awk '{print $2, $3}'
+
+b) curl -O *link*
+chmod +x sesiune-is-over.sh
+nano ~/.bashr
+
+in .bashrc scriu:
+alias sesiune-is-over="/home/student/sesiune-is-over.sh" #cale absoluta catre script
+
+source ~/.bashrc
+
+c) du / > temp.txt 2> /dev/null ; cat temp.txt | sort -n -r | head -14 | tail -13
+
+d) sudo apt install tmux
+#vezi pasi in lab 11 de detasare si reatatsare la terminale tmux
+
+3.
+b) echo "text de criptat" > fisier_intrare.txt
+touch fisier_criptat.enc
+openssl openssl enc -aria-256-ecb -in fisier_intrare.txt -out fisier_criptat.enc -pass pass:mashle
+
+c) ssh-keygen
+ssh-copy-id student@172.20.128.2
+
+d) scp -r /home/student student@172.20.128.2:/
+
+#c si d nu sunt testate pt ca nu merge ssh ul, cred ca e statia 172.20.128.2 inactiva
+
+4.
+a) mkdir esports
+cd esports
+git init
+git status 
+
+b) #nu poti sa adaugi branch nou intr-un repository gol
+# eu am creat un fisier gol, am dat commit si apoi am creat branch-ul (nu stiu daca e ok sa fac asa in examen tho)
+touch emptyfile
+git add emptyfile
+git commit -m "emptyfile"
+git status
+git branch LEC
+git checkout LEC
+git branch
+
+c) echo "hello" > *nume fisier*
+git add *fisier*
+git commit -m "mesaj dat de ei"
+git log
+
+d) touch fisier_nou
+git add fisier_nou
+git commit --amend -m "mesaj nou"
+git log
+
+5.
+a) curl ifconfig.me
+
+b) ???
+nmap -Pn -sV -p 1-1000 fep.grid.pub.ro | grep filtered 
+
+d) ssh student@172.20.128.2 ip a s | grep UP -A 2
+#nu e testat
+
+6.
+a) find /var/log -name *.gz 2> /dev/null
+
+b)
+LIST=$(echo -n \"; for i in $(find / -maxdepth 1 -type d | tr -d '/' | tail -18); do echo -n "$i "; done ; echo \"); echo "LIST=$LIST"
+
+c)
+checks.sh:
+
+#!/bin/bash
+
+eval $* 2> eroare > output
+
+if [ ! -s ./eroare ]; then
+   echo "All good!"
+else 
+   echo "The one-liner is evil!"
+fi
+
+#la rulare, one-linerul trebuie pus intre ghilimele daca are pipe-uri
+
+
+
+
+
+
+
+

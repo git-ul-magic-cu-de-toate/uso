@@ -1,0 +1,64 @@
+		Utilitare / comenzi USO
+
+
+Procese
+
+- > ps - afiseaza procesele din sistem
+   -u root - afiseaza toate procesele create de root
+- > host <site> - adresa IP
+- > ping -c 7 mamba.cs.pub.ro - trimite 7 pachete
+- > ip route show - afiseaza gateway ul implicit
+
+
+Dezvoltarea aplicatiilor
+
+- > dpkg -s ... - statusul aplicatiei (daca e instalat)
+- > sudo apt install .... - instalare aplicatii
+
+
+Utilizatori
+awk -F':' '{ print $1 " " FS " " $NF }' /etc/passwd - utilizator + shell default
+awk -F':' '{ print $1 " " FS " " $NF }' /etc/passwd | grep ..... | wc -l
+- > id - informatii utilizator
+- > groups - grupurile utilizatorului curent
+- > whoami - numele utilizatorului curent
+- > finger - informatii despre un utilizator
+- > sudo adduser - adauga utilizator
+- > deluser - sterge utilizator
+- > addgroup - adauga grup
+- > delgroup - sterge grup
+- > passwd - schimbare parola
+- > chown - modifica si utilizatorul si grupul (owner)
+- > chgrp - modifica grupul (owner)
+- > chmod - modifica permisiuni (vezi forma in octal)
+- > ls -l / stat - afisare metadate (permisiuni)
+- > usermod - modificare utilizator
+	ex : usermod --expirydate 1 alice
+        ex : -s - schimba shell-ul default
+        ex : sudo usermod USER -d PATH
+
+Alte utilitare
+
+- > find - cautare fisiere dupa:
+	- nume   -name
+	- tip    -type (f-file, d-director)
+- > cat/less - afiseaza pe ecran continutul unui fisier
+- > search - cauta in fisier
+- > grep - filtrarea continutului unui fisier
+- > head - afișează primele 10 linii din conținut (arg cu - in fata)
+- > tail - afișează ultimele 10 linii din conținut
+- > --sort - sorteaza dupa argument
+	ex: --sort=%mem sorteaza dupa procentul de memorie folosita
+	ex2: --sort=-%mem sorteaza descrescator
+
+
+Sintaxe / Operatori
+$? - afiseaza modul in care s-a incheiat executia unei comenzi
+; separarea comenzilor independente dintr-o linie
+&& - executa a doua comanda daca prima a fost executata cu succes
+|| - executa a doua comanda doar daca prima s-a terminat cu un esec
+> - redirecteaza STDOUT sau STDERR intr-un fisier
+	- STDIN are asociat descriptorul de fișier 0
+	- STDOUT are asociat descriptorul de fișier 1 (se poate omite descriptorul)
+	- STDERR are asociat descriptorul de fișier 2
+>> - redirectare in mod append (nu sterge datele din fisier)

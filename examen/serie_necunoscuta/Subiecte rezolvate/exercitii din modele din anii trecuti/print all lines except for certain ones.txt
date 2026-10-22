@@ -1,0 +1,1 @@
+awk 'NR<5 || NR>25{print}' fisier.txt

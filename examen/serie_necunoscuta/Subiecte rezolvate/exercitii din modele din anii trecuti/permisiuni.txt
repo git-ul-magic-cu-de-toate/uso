@@ -1,0 +1,10 @@
+# uso si so primesc permisiuni asupra directoarelor USO sau SO:
+sudo chmod -Rv u=rwx,g=rx,o=rx /calea/pana/la/Lucrari\ de\ curs/USO  
+sudo chmod -Rv u=rwx,g=rx,o=rx /calea/pana/la/Lucrari\ de\ curs/SO
+
+# doar uso si so pot accesa USO:
+sudo chown -R uso:uso /calea/pana/la/Lucrari\ de\ curs/USO
+sudo chmod -Rv u=rwx,g=rwx,o= /calea/pana/la/Lucrari\ de\ curs/USO
+
+# permisiuni pt un anumit user asupra unui fisier/director:
+setfacl -R -m u:username:rwx myfolder

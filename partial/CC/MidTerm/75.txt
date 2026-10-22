@@ -1,0 +1,75 @@
+1. Pentru a realiza cerințele date, poți urma pașii de mai jos:
+
+(a) Creare structură de directoare și fișiere:
+mkdir -p ~/student/{a/{a1,a2,a3,a4},b/{b1,b2,b3},c}
+(b) Creare și adăugare fișier cu numele tău în directorul "b":
+touch ~/student/b/numele_tau
+(c) Creare arhivă zip cu numele "USO-75.zip" care să includă directorul "b":
+zip -r USO-75.zip ~/student/b
+(d) Creare fișier care să conțină grupa ta și adăugare la arhivă:
+echo "Grupa ta" > grupa.txt
+zip -u USO-75.zip grupa.txt
+   Afișare conținut arhivei (fără dezarhivare):
+unzip -l USO-75.zip
+Asigură-te că rulezi aceste comenzi în directorul home al utilizatorului "student".
+
+2. (a) Pentru a instala utilitarele "cowsay" și "fortune", poți utiliza gestionarul de pachete specific sistemului tău. De exemplu, pe sistemele bazate pe Debian/Ubuntu, poți folosi:
+sudo apt-get install cowsay fortune
+(b) Pentru a afișa un text generat de "fortune" cu o formă de dragon, poți utiliza:
+fortune | cowsay -f dragon
+(c) Pentru a dezinstala "cowsay" și "fortune", poți folosi:
+sudo apt-get remove cowsay fortune
+(d) Pentru a porni din nou comanda fortune fără cowsay, poți utiliza:
+fortune
+Aceste comenzi ar trebui să te ajute să instalezi, să folosești și să dezinstalezi utilitarele menționate. Asigură-te că ai permisiunile necesare pentru a instala și dezinstala pachete pe sistemul tău.
+
+3. (a) Pentru a afișa primele 15 linii din "/etc/passwd", poți utiliza comanda head:
+head -n 15 /etc/passwd
+(b) Pentru a afișa numărul de apariții al cuvântului "nologin" în "/etc/passwd", poți utiliza comanda grep împreună cu wc:
+grep -o -w 'nologin' /etc/passwd | wc -l
+Această comandă caută cuvântul "nologin" în "/etc/passwd" și numără aparițiile acestuia.
+(c) Pentru a afișa cât spațiu mai este disponibil pe discul montat la "/", poți folosi comanda df:
+df -h /
+Această comandă arată informații despre spațiul de stocare pentru directorul radacină ("/") și afișează cantitatea de spațiu utilizată, disponibilă și totală.
+(d) Pentru a afișa ultimele 10 comenzi rulate, poți utiliza comanda history împreună cu tail:
+history | tail -n 10
+Această comandă afișează ultimele 10 comenzi rulate în terminal.
+
+4. (a) Pentru a trimite 5 pachete către "google.com" folosind utilitarul ping, poți utiliza:
+ping -c 5 google.com
+(b) Pentru a afișa adresa MAC de pe interfața "ens3", poți utiliza comanda ip sau ifconfig (în funcție de sistemul de operare):
+ip link show ens3 | awk '/link\/ether/ {print $2}'
+sau
+ifconfig ens3 | grep "ether" | awk '{print $2}'
+(c) Pentru a afișa adresa IPv4 a rutei implicite, poți utiliza comanda ip route show și grep pentru a selecta linia corespunzătoare:
+ip route show | grep default | awk '{print $3}'
+(d) Pentru a afișa toate porturile care ascultă conexiuni TCP, poți utiliza comanda netstat:
+netstat -lnt
+Această comandă afișează toate porturile care ascultă conexiuni TCP. Asigură-te că rulezi comanda cu privilegii adecvate pentru a accesa aceste informații.
+
+5. (a) Pentru a afișa doar numele variabilelor de mediu din shell-ul curent, poți utiliza comanda printenv împreună cu cut pentru a extrage doar numele variabilelor:
+printenv | cut -d= -f1
+(b) Pentru a afișa doar numele modelului procesorului de pe sistem, poți utiliza comanda cat pentru a citi informațiile din fișierul /proc/cpuinfo:cat /proc/cpuinfo | grep "model name" | uniq | cut -d: -f2
+(c) Pentru a afișa cât spațiu liber este pe disc, poți utiliza comanda df:
+df -h
+(d) Pentru a crea un fișier nou și a introduce 0.1 GB de octeți aleatori, poți utiliza dd împreună cu /dev/urandom:
+dd if=/dev/urandom of=noul_fisier bs=1M count=100
+   Această comandă creează un fișier numit "noul_fisier" cu 0.1 GB de octeți aleatori. Asigură-te că ai suficient spațiu pe disc pentru a efectua această operație.
+
+6. (a) Clonare și mutare pe branch-ul "mid-75":
+git clone https://github.com/systems-cs-pub-ro/uso-practic-public.git
+cd uso-practic-public
+git checkout -b mid-75 origin/mid-75
+(b) Creare fișier "Makefile" cu regula "build":
+echo "build: main.c\n\tgcc -o main main.c" > Makefile
+(c) Realizare commit cu mesajul "First change":
+git add Makefile
+git commit -m "First change"
+(d) Adăugare regulă "clean" și commit cu mesajul "Add clean rule":
+echo -e "clean:\n\trm -f main" >> Makefile
+git add Makefile
+git commit -m "Add clean rule"
+   Afișare hash ultimului commit:
+git log --pretty=format:"%h %s" -n 1
+Această comandă afișează hash-ul și mesajul ultimului commit.
+
